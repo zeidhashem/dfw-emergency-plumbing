@@ -2,22 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DFW Emergency – 24/7 Emergency Plumbing Dispatch in DFW</title>
+  <title>DFW Emergency – 24/7 Emergency Plumbing Dispatch in Dallas–Fort Worth</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="DFW Emergency is a 24/7 emergency plumbing dispatch service for the Dallas–Fort Worth area. Call (682) 273-0964 to be connected with a licensed local plumber for burst pipes, flooding, sewage backups, and urgent plumbing problems." />
+  <meta name="description" content="DFW Emergency is a 24/7 emergency plumbing dispatch service serving the Dallas–Fort Worth metro. Call (682) 273-0964 to be connected with a licensed plumber for burst pipes, flooding, sewage backups, and urgent plumbing problems." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg-dark: #020617;
+      --bg-page: #020617;
+      --bg-card: #020617;
+      --primary: #22c55e;
+      --primary-dark: #16a34a;
+      --primary-soft: #bbf7d0;
+      --accent: #0ea5e9;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 26px 55px rgba(15, 23, 42, 0.55);
+      --radius-card: 24px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background: linear-gradient(145deg, #0f172a, #020617);
+      background:
+        radial-gradient(circle at top right, #1e293b 0, #020617 40%, #000 100%);
       color: #0f172a;
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -25,141 +47,158 @@
       text-decoration: none;
     }
 
-    .page {
+    .page-wrap {
       min-height: 100vh;
-      padding: 24px 12px 40px;
+      padding: 24px 12px 90px;
       display: flex;
       justify-content: center;
     }
 
     .shell {
       width: 100%;
-      max-width: 1080px;
+      max-width: 1160px;
     }
 
-    /* CARD WRAPPER */
-    .card {
-      background: #ffffff;
-      border-radius: 22px;
+    .layout-card {
+      background: radial-gradient(circle at top left, #eff6ff, #ffffff);
+      border-radius: var(--radius-card);
       box-shadow:
-        0 28px 60px rgba(15, 23, 42, 0.45),
-        0 0 0 1px rgba(148, 163, 184, 0.25);
+        var(--shadow-soft),
+        0 0 0 1px var(--border-subtle);
       overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
-    /* HEADER */
-    .header {
+    /* NAV / HEADER */
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 22px;
+      padding: 18px 24px;
       border-bottom: 1px solid #e5e7eb;
-      background: linear-gradient(90deg, #eff6ff, #f9fafb);
+      background: linear-gradient(90deg, #f9fafb, #eff6ff);
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .brand-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8);
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: conic-gradient(from 160deg, #0ea5e9, #6366f1, #22c55e, #0ea5e9);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #eff6ff;
-      font-weight: 900;
-      font-size: 1.1rem;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.45);
     }
 
-    .brand-text-main {
-      font-weight: 800;
+    .logo-mark svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .brand-block-title {
       font-size: 1.05rem;
-      color: #0f172a;
+      font-weight: 800;
+      color: #020617;
     }
 
-    .brand-text-sub {
+    .brand-block-sub {
       font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #64748b;
-    }
-
-    .header-right {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 3px;
-    }
-
-    .header-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: #6b7280;
     }
 
-    .header-phone {
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: #0f172a;
+    .nav-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: flex-end;
     }
 
-    .header-phone a {
-      color: #0f172a;
+    .nav-right-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+
+    .nav-right-phone a {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #022c22;
+    }
+
+    .nav-right-pill {
+      margin-top: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 0.78rem;
+      color: #166534;
+    }
+
+    .nav-right-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
     }
 
     @media (max-width: 640px) {
-      .header {
+      .nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
       }
-      .header-right {
+      .nav-right {
         align-items: flex-start;
       }
     }
 
-    /* HERO */
+    /* HERO GRID */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-      gap: 24px;
-      padding: 24px 22px 26px;
-      border-bottom: 1px solid #e5e7eb;
-      background: radial-gradient(circle at top left, #eff6ff, #ffffff);
+      grid-template-columns: minmax(0, 7fr) minmax(0, 6fr);
+      gap: 28px;
+      padding: 24px 24px 22px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
       .hero {
         grid-template-columns: 1fr;
       }
     }
 
     .hero-main-badge {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: #6366f1;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: 2rem;
+      font-size: clamp(2rem, 2.4vw + 1.1rem, 2.6rem);
       font-weight: 900;
       color: #020617;
       margin-bottom: 10px;
     }
 
-    @media (min-width: 900px) {
-      .hero-title {
-        font-size: 2.3rem;
-      }
+    .hero-title span {
+      color: #16a34a;
     }
 
     .hero-sub {
@@ -168,18 +207,25 @@
       margin-bottom: 16px;
     }
 
-    .hero-note {
-      font-size: 0.85rem;
-      color: #6b7280;
-      margin-top: 6px;
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
-      margin-top: 8px;
+      margin-bottom: 10px;
     }
 
     .btn-primary {
@@ -188,98 +234,118 @@
       justify-content: center;
       padding: 11px 20px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #022c22;
       font-weight: 800;
       font-size: 0.98rem;
       border: none;
+      box-shadow: 0 16px 32px rgba(22, 163, 74, 0.35);
       cursor: pointer;
-      box-shadow: 0 12px 26px rgba(22, 163, 74, 0.30);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      transition: transform 0.11s ease, box-shadow 0.11s ease, filter 0.11s ease;
       white-space: nowrap;
     }
 
     .btn-primary span {
-      margin-left: 6px;
       font-weight: 700;
       font-size: 0.95rem;
+      margin-left: 6px;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 32px rgba(22, 163, 74, 0.35);
+      box-shadow: 0 20px 36px rgba(22, 163, 74, 0.45);
       filter: brightness(1.03);
     }
 
-    .hero-secondary-text {
-      font-size: 0.8rem;
+    .hero-alt {
+      font-size: 0.82rem;
       color: #6b7280;
     }
 
-    .hero-side {
+    .hero-alt strong {
+      color: #111827;
+    }
+
+    /* Hero side image */
+    .hero-visual {
       position: relative;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
-      background-image: url('https://images.pexels.com/photos/5854182/pexels-photo-5854182.jpeg?auto=compress&cs=tinysrgb&w=1200');
+      min-height: 220px;
+      background-image:
+        linear-gradient(135deg, rgba(15,23,42,0.8), rgba(30,64,175,0.85)),
+        url('https://images.pexels.com/photos/5854182/pexels-photo-5854182.jpeg?auto=compress&cs=tinysrgb&w=1200');
       background-size: cover;
       background-position: center;
-      min-height: 210px;
+      color: #e5e7eb;
     }
 
-    .hero-side::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(30, 64, 175, 0.65));
-    }
-
-    .hero-side-inner {
+    .hero-visual-inner {
       position: relative;
-      padding: 16px 16px 18px;
+      padding: 18px 18px 16px;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      color: #e5e7eb;
     }
 
-    .hero-side-title {
-      font-size: 0.95rem;
-      letter-spacing: 0.16em;
+    .hero-visual-title {
+      font-size: 0.82rem;
       text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: #bfdbfe;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
-    .hero-side-main {
+    .hero-visual-main {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
 
-    .hero-side-list {
+    .hero-visual-list {
       font-size: 0.86rem;
-      color: #cbd5f5;
+      list-style: none;
+      margin-top: 6px;
     }
 
-    .hero-side-list li {
-      margin-left: 14px;
+    .hero-visual-list li {
+      margin-left: 0;
       margin-bottom: 4px;
-      list-style: disc;
+      padding-left: 16px;
+      position: relative;
     }
 
-    .hero-side-footer {
+    .hero-visual-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: 700;
+    }
+
+    .hero-visual-foot {
       font-size: 0.78rem;
-      color: #cbd5f5;
+      color: #d1d5db;
     }
 
     /* BODY SECTIONS */
     .body {
-      padding: 18px 22px 24px;
+      padding: 18px 24px 22px;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 480px) {
+      .nav,
+      .hero,
+      .body,
+      .footer {
+        padding-inline: 16px;
+      }
     }
 
     .section {
-      padding: 16px 0 18px;
+      padding: 18px 0 20px;
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -291,8 +357,8 @@
     .section-title {
       font-size: 1.1rem;
       font-weight: 800;
-      margin-bottom: 8px;
       color: #020617;
+      margin-bottom: 8px;
     }
 
     .section-text {
@@ -302,22 +368,22 @@
 
     ul {
       list-style: none;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     ul li {
       font-size: 0.92rem;
+      color: #4b5563;
       margin-bottom: 5px;
       padding-left: 18px;
       position: relative;
-      color: #4b5563;
     }
 
     ul li::before {
       content: "•";
       position: absolute;
       left: 6px;
-      color: #0ea5e9;
+      color: var(--accent);
       font-weight: 700;
     }
 
@@ -334,24 +400,25 @@
       }
     }
 
-    .step {
-      border-radius: 14px;
+    .step-card {
+      background: #ffffff;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      padding: 12px 13px 13px;
+      padding: 12px 14px 13px;
+      box-shadow: 0 6px 18px rgba(148, 163, 184, 0.14);
     }
 
     .step-label {
       font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
       color: #9ca3af;
       margin-bottom: 4px;
     }
 
     .step-title {
+      font-size: 0.96rem;
       font-weight: 700;
-      font-size: 0.98rem;
       margin-bottom: 4px;
       color: #111827;
     }
@@ -369,12 +436,12 @@
     }
 
     .chip {
-      font-size: 0.78rem;
-      padding: 5px 9px;
+      font-size: 0.8rem;
+      padding: 5px 10px;
       border-radius: 999px;
       background: #eff6ff;
-      color: #1d4ed8;
       border: 1px solid #bfdbfe;
+      color: #1d4ed8;
     }
 
     .faq-item {
@@ -392,15 +459,16 @@
       margin-top: 3px;
     }
 
-    .cta-bottom {
+    .cta-row {
       display: flex;
       flex-direction: column;
       gap: 10px;
       align-items: flex-start;
+      margin-top: 4px;
     }
 
     @media (min-width: 640px) {
-      .cta-bottom {
+      .cta-row {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -412,87 +480,143 @@
       color: #4b5563;
     }
 
+    /* FOOTER */
     .footer {
-      padding: 12px 22px 18px;
+      padding: 10px 24px 14px;
+      background: #f3f4f6;
       border-top: 1px solid #e5e7eb;
-      background: #f9fafb;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: #6b7280;
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
-    @media (max-width: 480px) {
-      .hero {
-        padding-inline: 16px;
-      }
-      .body, .header, .footer {
-        padding-inline: 16px;
+    /* MOBILE STICKY CALL BAR */
+    .sticky-call {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 8px 14px 10px;
+      background: linear-gradient(90deg, #0f172a, #020617);
+      display: none;
+      justify-content: center;
+      box-shadow: 0 -6px 20px rgba(15, 23, 42, 0.85);
+    }
+
+    .sticky-call-inner {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .sticky-call-text {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .sticky-call-btn {
+      flex-shrink: 0;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #052e16;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-align: center;
+      box-shadow: 0 10px 22px rgba(34,197,94,0.45);
+    }
+
+    @media (max-width: 720px) {
+      .sticky-call {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="page-wrap">
     <div class="shell">
-      <div class="card">
+      <div class="layout-card">
 
-        <!-- HEADER -->
-        <header class="header">
-          <div class="brand">
-            <div class="brand-icon">DFW</div>
+        <!-- NAV -->
+        <header class="nav">
+          <div class="nav-left">
+            <div class="logo-mark">
+              <!-- Simple droplet logo -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3.25C9.5 6.8 7 9.66 7 12.4C7 15.6 9.46 18 12 18C14.54 18 17 15.6 17 12.4C17 9.66 14.5 6.8 12 3.25Z" stroke="#e5f2ff" stroke-width="1.6" />
+                <circle cx="12" cy="12.2" r="2.1" fill="#e0f2fe" />
+              </svg>
+            </div>
             <div>
-              <div class="brand-text-main">DFW Emergency</div>
-              <div class="brand-text-sub">Plumbing Dispatch • 24/7</div>
+              <div class="brand-block-title">DFW Emergency</div>
+              <div class="brand-block-sub">Plumbing Dispatch • 24/7</div>
             </div>
           </div>
-          <div class="header-right">
-            <div class="header-label">Emergency Dispatch Line</div>
-            <div class="header-phone">
+
+          <div class="nav-right">
+            <div class="nav-right-label">Emergency Dispatch Line</div>
+            <div class="nav-right-phone">
               <a href="tel:+16822730964">(682) 273-0964</a>
+            </div>
+            <div class="nav-right-pill">
+              <span class="nav-right-dot"></span>
+              Live answer whenever available
             </div>
           </div>
         </header>
 
         <!-- HERO -->
         <section class="hero">
+          <!-- TEXT SIDE -->
           <div>
-            <div class="hero-main-badge">24/7 EMERGENCY PLUMBING DISPATCH • DALLAS–FORT WORTH</div>
-            <h1 class="hero-title">One Call Connects You to a Licensed Plumber in Minutes.</h1>
+            <div class="hero-main-badge">DALLAS–FORT WORTH • 24/7 EMERGENCY PLUMBING DISPATCH</div>
+            <h1 class="hero-title">
+              One Call Connects You to a <span>Licensed Plumber</span> in Minutes.
+            </h1>
             <p class="hero-sub">
-              Burst pipes, flooding, sewage backups, or no hot water? DFW Emergency helps you reach an available emergency plumber
-              anywhere in the DFW metro.
+              Burst pipe, flooding, sewage backup, or no hot water? Instead of calling around, call one number.
+              DFW Emergency helps you reach an available plumber anywhere in the DFW metro.
             </p>
+
+            <div class="hero-highlight">
+              🚨 “If water or sewage is where it shouldn’t be, treat it as an emergency.”
+            </div>
 
             <div class="hero-actions">
               <a class="btn-primary" href="tel:+16822730964">
                 Call Now
                 <span>(682) 273-0964</span>
               </a>
-              <div class="hero-secondary-text">
-                Live dispatch. We collect details and connect you with a licensed plumber serving your area.
+              <div class="hero-alt">
+                <strong>No forms, no waiting.</strong><br />
+                We collect the basics and connect you with a licensed plumber who serves your area.
               </div>
-            </div>
-            <div class="hero-note">
-              No online forms, no waiting. If water is where it shouldn’t be, treat it as an emergency.
             </div>
           </div>
 
-          <aside class="hero-side">
-            <div class="hero-side-inner">
+          <!-- VISUAL SIDE -->
+          <aside class="hero-visual">
+            <div class="hero-visual-inner">
               <div>
-                <div class="hero-side-title">PLUMBING EMERGENCIES</div>
-                <div class="hero-side-main">We focus on true “can’t-wait” situations:</div>
-                <ul class="hero-side-list">
+                <div class="hero-visual-title">PLUMBING EMERGENCIES WE FOCUS ON</div>
+                <div class="hero-visual-main">True “can’t wait” problems:</div>
+                <ul class="hero-visual-list">
                   <li>Burst & leaking pipes</li>
-                  <li>Active flooding & standing water</li>
-                  <li>Sewage backups and main line clogs</li>
-                  <li>No hot water or failed water heater</li>
+                  <li>Active flooding / standing water</li>
+                  <li>Sewage backups & main line clogs</li>
+                  <li>No hot water / failed water heater</li>
                 </ul>
               </div>
-              <div class="hero-side-footer">
-                All work is completed by independent, licensed plumbing companies. We handle dispatch & coordination.
+              <div class="hero-visual-foot">
+                All work is performed by independent, licensed plumbing companies.
+                DFW Emergency handles dispatch & coordination only.
               </div>
             </div>
           </aside>
@@ -501,21 +625,20 @@
         <!-- BODY -->
         <main class="body">
           <section class="section">
-            <h2 class="section-title">What DFW Emergency Does</h2>
+            <h2 class="section-title">What DFW Emergency Actually Does</h2>
             <p class="section-text">
               DFW Emergency is a <strong>24/7 emergency plumbing dispatch and referral service</strong> for the Dallas–Fort Worth metro area.
               We are <strong>not</strong> a plumbing contractor.
             </p>
             <p class="section-text" style="margin-top:8px;">
-              When a homeowner has a plumbing emergency, we answer the call, collect the basics, and connect them with a
-              <strong>licensed, vetted plumbing company</strong> that handles urgent calls in their part of DFW. The plumber then
-              contacts the homeowner directly with pricing and an estimated time of arrival.
+              When a homeowner has a plumbing emergency, we answer the call, ask a few quick questions, then route the request to a
+              <strong>licensed, vetted plumbing company</strong> that handles urgent calls in that part of DFW. The plumber then contacts the homeowner directly with pricing and an estimated time of arrival.
             </p>
           </section>
 
           <section class="section">
             <h2 class="section-title">Emergency Problems We Help With</h2>
-            <p class="section-text">If water or sewage is where it shouldn’t be, treat it as an emergency. Common issues include:</p>
+            <p class="section-text">If water or sewage is where it shouldn’t be, treat it as an emergency. Common issues we dispatch for include:</p>
             <ul>
               <li>Burst or leaking pipes in walls, ceilings, or under sinks</li>
               <li>Active flooding or standing water inside the home</li>
@@ -536,35 +659,36 @@
 
           <section class="section">
             <h2 class="section-title">How the Dispatch Process Works</h2>
-            <p class="section-text">We keep the process simple so you can focus on protecting your home.</p>
-
+            <p class="section-text">
+              We keep the process simple so you can focus on shutting off water, protecting belongings, and staying safe.
+            </p>
             <div class="steps">
-              <div class="step">
+              <div class="step-card">
                 <div class="step-label">Step 1</div>
-                <div class="step-title">You Call Our Emergency Line</div>
+                <div class="step-title">You Call the Emergency Line</div>
                 <p class="step-text">
-                  Call <a href="tel:+16822730964">(682) 273-0964</a> and briefly explain what’s happening and where you’re located in DFW.
+                  Call <a href="tel:+16822730964">(682) 273-0964</a> and describe what you’re seeing and where you’re located in DFW.
                 </p>
               </div>
-              <div class="step">
+              <div class="step-card">
                 <div class="step-label">Step 2</div>
                 <div class="step-title">We Contact a Licensed Plumber Near You</div>
                 <p class="step-text">
-                  We reach out to a licensed, insured plumbing company that serves your area and is available for emergency service.
+                  We reach out to a licensed, insured plumbing company that handles emergency calls and serves your area.
                 </p>
               </div>
-              <div class="step">
+              <div class="step-card">
                 <div class="step-label">Step 3</div>
                 <div class="step-title">They Call You With Pricing & ETA</div>
                 <p class="step-text">
-                  The plumber calls you directly with estimated arrival time and pricing. If you approve, they dispatch to your home.
+                  The plumber calls you directly, explains pricing before work starts, and gives an ETA. If you approve, they dispatch to your home.
                 </p>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2 class="section-title">DFW Service Areas</h2>
+            <h2 class="section-title">DFW Coverage Area</h2>
             <p class="section-text">
               We help route emergency plumbing calls across the Dallas–Fort Worth metroplex, including:
             </p>
@@ -580,6 +704,9 @@
               <div class="chip">Frisco</div>
               <div class="chip">Surrounding suburbs</div>
             </div>
+            <p class="section-text" style="margin-top:8px;">
+              Not sure if you’re in range? Call <a href="tel:+16822730964">(682) 273-0964</a> and we’ll let you know if we can connect you with a nearby plumber.
+            </p>
           </section>
 
           <section class="section">
@@ -607,7 +734,7 @@
           </section>
 
           <section class="section">
-            <div class="cta-bottom">
+            <div class="cta-row">
               <div class="cta-text">
                 <strong>Need emergency plumbing help right now?</strong><br />
                 Call our dispatch line and we’ll work to connect you with a licensed plumber as quickly as possible.
@@ -624,6 +751,18 @@
           <div>DFW Emergency is a dispatch and referral service. We are not a licensed plumbing contractor. All work is performed by independent, licensed plumbing companies.</div>
         </footer>
       </div>
+    </div>
+  </div>
+
+  <!-- Sticky mobile call bar -->
+  <div class="sticky-call">
+    <div class="sticky-call-inner">
+      <div class="sticky-call-text">
+        🚨 Emergency plumbing in DFW? Tap to call now.
+      </div>
+      <a class="sticky-call-btn" href="tel:+16822730964">
+        Call (682) 273-0964
+      </a>
     </div>
   </div>
 </body>
