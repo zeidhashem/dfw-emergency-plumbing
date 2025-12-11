@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DFW Emergency – 24/7 Emergency Plumbing Dispatch</title>
+  <title>DFW Emergency – 24/7 Emergency Plumbing Dispatch in DFW</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="DFW Emergency is a 24/7 emergency plumbing dispatch service for the Dallas–Fort Worth area. Call (682) 273-0964 to be connected with a licensed local plumber for burst pipes, flooding, sewage backups, and urgent plumbing problems." />
 
@@ -15,8 +15,8 @@
     }
 
     body {
-      background: #0f172a;
-      color: #f9fafb;
+      background: linear-gradient(145deg, #0f172a, #020617);
+      color: #0f172a;
       line-height: 1.6;
     }
 
@@ -27,119 +27,277 @@
 
     .page {
       min-height: 100vh;
+      padding: 24px 12px 40px;
       display: flex;
       justify-content: center;
-      padding: 24px 12px 32px;
     }
 
-    .container {
+    .shell {
       width: 100%;
-      max-width: 880px;
-      background: #020617;
-      border-radius: 18px;
-      border: 1px solid #1e293b;
-      padding: 20px 18px 26px;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6);
+      max-width: 1080px;
     }
 
-    @media (min-width: 768px) {
-      .container {
-        padding: 28px 28px 32px;
-      }
+    /* CARD WRAPPER */
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow:
+        0 28px 60px rgba(15, 23, 42, 0.45),
+        0 0 0 1px rgba(148, 163, 184, 0.25);
+      overflow: hidden;
     }
 
-    .badge {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #a5b4fc;
-      margin-bottom: 8px;
-    }
-
-    .headline {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    @media (min-width: 768px) {
-      .headline {
-        font-size: 2.1rem;
-      }
-    }
-
-    .subheadline {
-      font-size: 0.98rem;
-      color: #e5e7eb;
-      margin-bottom: 16px;
-    }
-
-    .hero-callout {
-      background: #0b1120;
-      border-radius: 14px;
-      border: 1px solid #1f2937;
-      padding: 14px 14px 16px;
-      margin-bottom: 16px;
-    }
-
-    .hero-callout strong {
-      font-weight: 700;
-    }
-
-    .call-row {
+    /* HEADER */
+    .header {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 1px solid #e5e7eb;
+      background: linear-gradient(90deg, #eff6ff, #f9fafb);
+    }
+
+    .brand {
+      display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 10px;
     }
 
-    .btn-call {
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eff6ff;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .brand-text-main {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #0f172a;
+    }
+
+    .brand-text-sub {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #64748b;
+    }
+
+    .header-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    .header-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
+    }
+
+    .header-phone {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .header-phone a {
+      color: #0f172a;
+    }
+
+    @media (max-width: 640px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 24px;
+      padding: 24px 22px 26px;
+      border-bottom: 1px solid #e5e7eb;
+      background: radial-gradient(circle at top left, #eff6ff, #ffffff);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-main-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6366f1;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #020617;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .hero-title {
+        font-size: 2.3rem;
+      }
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 18px;
+      padding: 11px 20px;
       border-radius: 999px;
-      background: #22c55e;
-      color: #052e16;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 0.98rem;
       border: none;
       cursor: pointer;
+      box-shadow: 0 12px 26px rgba(22, 163, 74, 0.30);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
       white-space: nowrap;
     }
 
-    .btn-call span {
+    .btn-primary span {
       margin-left: 6px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
     }
 
-    .call-note {
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 32px rgba(22, 163, 74, 0.35);
+      filter: brightness(1.03);
+    }
+
+    .hero-secondary-text {
       font-size: 0.8rem;
-      color: #cbd5f5;
+      color: #6b7280;
     }
 
-    .section {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid #1f2937;
+    .hero-side {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background-image: url('https://images.pexels.com/photos/5854182/pexels-photo-5854182.jpeg?auto=compress&cs=tinysrgb&w=1200');
+      background-size: cover;
+      background-position: center;
+      min-height: 210px;
     }
 
-    .section:first-of-type {
-      border-top: none;
-      padding-top: 0;
+    .hero-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(30, 64, 175, 0.65));
     }
 
-    .section-title {
+    .hero-side-inner {
+      position: relative;
+      padding: 16px 16px 18px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #e5e7eb;
+    }
+
+    .hero-side-title {
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #bfdbfe;
+      margin-bottom: 4px;
+    }
+
+    .hero-side-main {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
 
+    .hero-side-list {
+      font-size: 0.86rem;
+      color: #cbd5f5;
+    }
+
+    .hero-side-list li {
+      margin-left: 14px;
+      margin-bottom: 4px;
+      list-style: disc;
+    }
+
+    .hero-side-footer {
+      font-size: 0.78rem;
+      color: #cbd5f5;
+    }
+
+    /* BODY SECTIONS */
+    .body {
+      padding: 18px 22px 24px;
+    }
+
+    .section {
+      padding: 16px 0 18px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #020617;
+    }
+
     .section-text {
-      font-size: 0.9rem;
-      color: #e5e7eb;
+      font-size: 0.95rem;
+      color: #4b5563;
     }
 
     ul {
@@ -148,25 +306,26 @@
     }
 
     ul li {
-      font-size: 0.9rem;
-      margin-bottom: 4px;
+      font-size: 0.92rem;
+      margin-bottom: 5px;
       padding-left: 18px;
       position: relative;
+      color: #4b5563;
     }
 
     ul li::before {
       content: "•";
       position: absolute;
       left: 6px;
-      color: #22c55e;
+      color: #0ea5e9;
       font-weight: 700;
     }
 
     .steps {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     @media (min-width: 768px) {
@@ -176,207 +335,296 @@
     }
 
     .step {
-      background: #020617;
-      border-radius: 12px;
-      border: 1px solid #1f2937;
-      padding: 10px 12px;
-      font-size: 0.88rem;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 12px 13px 13px;
     }
 
-    .step h3 {
-      font-size: 0.8rem;
+    .step-label {
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.16em;
       color: #9ca3af;
       margin-bottom: 4px;
     }
 
-    .step strong {
-      font-size: 0.94rem;
-      display: block;
+    .step-title {
+      font-weight: 700;
+      font-size: 0.98rem;
       margin-bottom: 4px;
-      color: #e5e7eb;
+      color: #111827;
     }
 
-    .faq-item {
-      margin-top: 10px;
+    .step-text {
       font-size: 0.9rem;
-    }
-
-    .faq-item strong {
-      display: block;
-      margin-bottom: 2px;
-      color: #e5e7eb;
+      color: #4b5563;
     }
 
     .service-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .chip {
       font-size: 0.78rem;
       padding: 5px 9px;
       border-radius: 999px;
-      border: 1px solid #1f2937;
-      background: #020617;
-      color: #cbd5f5;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .faq-item {
+      margin-top: 10px;
+    }
+
+    .faq-item strong {
+      font-size: 0.94rem;
+      color: #111827;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-top: 3px;
+    }
+
+    .cta-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 640px) {
+      .cta-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .cta-text {
+      font-size: 0.95rem;
+      color: #4b5563;
     }
 
     .footer {
-      margin-top: 18px;
-      padding-top: 10px;
-      border-top: 1px solid #1f2937;
-      font-size: 0.76rem;
-      color: #9ca3af;
+      padding: 12px 22px 18px;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 0.78rem;
+      color: #6b7280;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .footer p + p {
-      margin-top: 4px;
+    @media (max-width: 480px) {
+      .hero {
+        padding-inline: 16px;
+      }
+      .body, .header, .footer {
+        padding-inline: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <main class="container">
-      <div class="badge">24/7 EMERGENCY PLUMBING DISPATCH • DALLAS–FORT WORTH</div>
-      <h1 class="headline">Emergency Plumbing Help in Minutes – One Call for the Entire DFW Area.</h1>
-      <p class="subheadline">
-        Burst pipes, flooding, sewage backups, or no hot water? DFW Emergency connects you with a licensed local plumber fast.
-      </p>
+    <div class="shell">
+      <div class="card">
 
-      <div class="hero-callout">
-        <strong>📞 24/7 Emergency Line:</strong>
-        <div class="call-row">
-          <a class="btn-call" href="tel:+16822730964">
-            Call Now
-            <span>(682) 273-0964</span>
-          </a>
-          <div class="call-note">
-            Speak with a dispatcher. We route your call to an available licensed plumber in your part of DFW.
+        <!-- HEADER -->
+        <header class="header">
+          <div class="brand">
+            <div class="brand-icon">DFW</div>
+            <div>
+              <div class="brand-text-main">DFW Emergency</div>
+              <div class="brand-text-sub">Plumbing Dispatch • 24/7</div>
+            </div>
           </div>
-        </div>
+          <div class="header-right">
+            <div class="header-label">Emergency Dispatch Line</div>
+            <div class="header-phone">
+              <a href="tel:+16822730964">(682) 273-0964</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="hero-main-badge">24/7 EMERGENCY PLUMBING DISPATCH • DALLAS–FORT WORTH</div>
+            <h1 class="hero-title">One Call Connects You to a Licensed Plumber in Minutes.</h1>
+            <p class="hero-sub">
+              Burst pipes, flooding, sewage backups, or no hot water? DFW Emergency helps you reach an available emergency plumber
+              anywhere in the DFW metro.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="tel:+16822730964">
+                Call Now
+                <span>(682) 273-0964</span>
+              </a>
+              <div class="hero-secondary-text">
+                Live dispatch. We collect details and connect you with a licensed plumber serving your area.
+              </div>
+            </div>
+            <div class="hero-note">
+              No online forms, no waiting. If water is where it shouldn’t be, treat it as an emergency.
+            </div>
+          </div>
+
+          <aside class="hero-side">
+            <div class="hero-side-inner">
+              <div>
+                <div class="hero-side-title">PLUMBING EMERGENCIES</div>
+                <div class="hero-side-main">We focus on true “can’t-wait” situations:</div>
+                <ul class="hero-side-list">
+                  <li>Burst & leaking pipes</li>
+                  <li>Active flooding & standing water</li>
+                  <li>Sewage backups and main line clogs</li>
+                  <li>No hot water or failed water heater</li>
+                </ul>
+              </div>
+              <div class="hero-side-footer">
+                All work is completed by independent, licensed plumbing companies. We handle dispatch & coordination.
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- BODY -->
+        <main class="body">
+          <section class="section">
+            <h2 class="section-title">What DFW Emergency Does</h2>
+            <p class="section-text">
+              DFW Emergency is a <strong>24/7 emergency plumbing dispatch and referral service</strong> for the Dallas–Fort Worth metro area.
+              We are <strong>not</strong> a plumbing contractor.
+            </p>
+            <p class="section-text" style="margin-top:8px;">
+              When a homeowner has a plumbing emergency, we answer the call, collect the basics, and connect them with a
+              <strong>licensed, vetted plumbing company</strong> that handles urgent calls in their part of DFW. The plumber then
+              contacts the homeowner directly with pricing and an estimated time of arrival.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Emergency Problems We Help With</h2>
+            <p class="section-text">If water or sewage is where it shouldn’t be, treat it as an emergency. Common issues include:</p>
+            <ul>
+              <li>Burst or leaking pipes in walls, ceilings, or under sinks</li>
+              <li>Active flooding or standing water inside the home</li>
+              <li>Sewage backups and clogged main lines</li>
+              <li>Overflowing toilets that won’t clear</li>
+              <li>No hot water or leaking water heaters</li>
+              <li>Slab leaks or unexplained wet spots on floors</li>
+              <li>Sudden loss of water pressure throughout the home</li>
+            </ul>
+            <div class="service-chips">
+              <div class="chip">Burst Pipes</div>
+              <div class="chip">Flooding</div>
+              <div class="chip">Sewage Backups</div>
+              <div class="chip">Water Heaters</div>
+              <div class="chip">Main Line Clogs</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">How the Dispatch Process Works</h2>
+            <p class="section-text">We keep the process simple so you can focus on protecting your home.</p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-label">Step 1</div>
+                <div class="step-title">You Call Our Emergency Line</div>
+                <p class="step-text">
+                  Call <a href="tel:+16822730964">(682) 273-0964</a> and briefly explain what’s happening and where you’re located in DFW.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-label">Step 2</div>
+                <div class="step-title">We Contact a Licensed Plumber Near You</div>
+                <p class="step-text">
+                  We reach out to a licensed, insured plumbing company that serves your area and is available for emergency service.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-label">Step 3</div>
+                <div class="step-title">They Call You With Pricing & ETA</div>
+                <p class="step-text">
+                  The plumber calls you directly with estimated arrival time and pricing. If you approve, they dispatch to your home.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">DFW Service Areas</h2>
+            <p class="section-text">
+              We help route emergency plumbing calls across the Dallas–Fort Worth metroplex, including:
+            </p>
+            <div class="service-chips">
+              <div class="chip">Dallas</div>
+              <div class="chip">Fort Worth</div>
+              <div class="chip">Arlington</div>
+              <div class="chip">Irving</div>
+              <div class="chip">Grand Prairie</div>
+              <div class="chip">Garland</div>
+              <div class="chip">Mesquite</div>
+              <div class="chip">Plano</div>
+              <div class="chip">Frisco</div>
+              <div class="chip">Surrounding suburbs</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <strong>Are you a plumbing company?</strong>
+              <p>No. DFW Emergency is a <strong>dispatch and referral service</strong>. We are not a licensed plumbing contractor. All plumbing work is performed by independent licensed plumbing companies.</p>
+            </div>
+
+            <div class="faq-item">
+              <strong>How do I pay for the work?</strong>
+              <p>You pay the plumbing company directly after the job. Most accept cash, debit or credit cards, and some offer financing options.</p>
+            </div>
+
+            <div class="faq-item">
+              <strong>Do you charge extra fees because you’re in the middle?</strong>
+              <p>Any pricing for the job comes directly from the licensed plumber before work begins. Our role is to help you reach an available emergency plumber quickly.</p>
+            </div>
+
+            <div class="faq-item">
+              <strong>Do you only handle true emergencies?</strong>
+              <p>Our priority is urgent situations like flooding, sewage backups, and no water. In some cases, we may help route non-emergency jobs depending on availability.</p>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="cta-bottom">
+              <div class="cta-text">
+                <strong>Need emergency plumbing help right now?</strong><br />
+                Call our dispatch line and we’ll work to connect you with a licensed plumber as quickly as possible.
+              </div>
+              <a class="btn-primary" href="tel:+16822730964">
+                Call Now — (682) 273-0964
+              </a>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div>© 2025 DFW Emergency. All rights reserved.</div>
+          <div>DFW Emergency is a dispatch and referral service. We are not a licensed plumbing contractor. All work is performed by independent, licensed plumbing companies.</div>
+        </footer>
       </div>
-
-      <section class="section">
-        <h2 class="section-title">What DFW Emergency Does</h2>
-        <p class="section-text">
-          DFW Emergency is a <strong>24/7 emergency plumbing dispatch and referral service</strong> for the Dallas–Fort Worth metro area.
-          We are <strong>not</strong> a plumbing contractor.
-        </p>
-        <p class="section-text" style="margin-top:6px;">
-          When a homeowner has a plumbing emergency, we answer the call, gather the details, and connect them with a
-          <strong>licensed, vetted plumbing company</strong> that serves their neighborhood and is available for urgent service.
-          The plumber then contacts the homeowner directly with pricing and an estimated time of arrival.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Emergency Plumbing Problems We Help With</h2>
-        <p class="section-text">
-          If water or sewage is where it shouldn’t be, treat it as an emergency. Common issues we dispatch for include:
-        </p>
-        <ul>
-          <li>Burst or leaking pipes in walls, ceilings, or under sinks</li>
-          <li>Active flooding or standing water inside the home</li>
-          <li>Sewage backups and clogged main lines</li>
-          <li>Overflowing toilets that won’t clear</li>
-          <li>No hot water or leaking water heaters</li>
-          <li>Slab leaks or unexplained wet spots on floors</li>
-          <li>Sudden loss of water pressure throughout the home</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">How the Dispatch Process Works</h2>
-        <p class="section-text">
-          We keep it simple so you can focus on protecting your home while help is on the way.
-        </p>
-        <div class="steps">
-          <div class="step">
-            <h3>Step 1</h3>
-            <strong>You Call Our Emergency Line</strong>
-            <p>Call <a href="tel:+16822730964">(682) 273-0964</a> and briefly explain what you’re seeing and where you are in the DFW area.</p>
-          </div>
-          <div class="step">
-            <h3>Step 2</h3>
-            <strong>We Contact a Licensed Plumber Near You</strong>
-            <p>We reach out to a licensed, insured plumbing company that handles emergencies and is available as soon as possible.</p>
-          </div>
-          <div class="step">
-            <h3>Step 3</h3>
-            <strong>They Call You With Pricing & ETA</strong>
-            <p>The plumber calls you directly with estimated arrival time and pricing. If you approve, they dispatch to your home.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">DFW Service Areas</h2>
-        <p class="section-text">
-          We help route emergency plumbing calls across the Dallas–Fort Worth metroplex, including:
-        </p>
-        <div class="service-chips">
-          <div class="chip">Dallas</div>
-          <div class="chip">Fort Worth</div>
-          <div class="chip">Arlington</div>
-          <div class="chip">Irving</div>
-          <div class="chip">Grand Prairie</div>
-          <div class="chip">Plano</div>
-          <div class="chip">Frisco</div>
-          <div class="chip">Garland</div>
-          <div class="chip">Mesquite</div>
-          <div class="chip">Surrounding suburbs</div>
-        </div>
-        <p class="section-text" style="margin-top:8px;">
-          Not sure if you’re in our coverage area? Call <a href="tel:+16822730964">(682) 273-0964</a> and we’ll let you know if we can connect you with a nearby plumber.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-
-        <div class="faq-item">
-          <strong>Are you a plumbing company?</strong>
-          <p>No. DFW Emergency is a <strong>dispatch and referral service</strong>. We are not a licensed plumbing contractor. All plumbing work is performed by independent licensed plumbing companies.</p>
-        </div>
-
-        <div class="faq-item">
-          <strong>How do I pay for the work?</strong>
-          <p>You pay the plumbing company directly after the job. Most accept cash, debit or credit cards, and some offer financing options.</p>
-        </div>
-
-        <div class="faq-item">
-          <strong>Do you charge extra fees because you’re in the middle?</strong>
-          <p>Any pricing for the job comes directly from the licensed plumber before work begins. Our role is to help you reach an available emergency plumber quickly.</p>
-        </div>
-
-        <div class="faq-item">
-          <strong>Do you only handle true emergencies?</strong>
-          <p>Our priority is urgent situations like flooding, sewage backups, and no water. In some cases, we may help route non-emergency jobs depending on availability.</p>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Need Emergency Plumbing Help Now?</h2>
-        <p class="section-text">
-          If you’re dealing with a plumbing emergency in the Dallas–Fort Worth area, call our dispatch line and we’ll work to connect you with a licensed plumber as quickly as possible.
-        </p>
-        <div class="call-row" style="margin-top:10px;">
-          <a class="btn-call" href="tel:+16822730964">
-            Call Now
-            <span>(682) 273-0964</span>
-          </a>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>© 2025 DFW Emergency. All rights reserved.</p>
-        <p>DFW Emergency is a dispatch and referral service. We are not a licensed plumbing contractor. All work is performed by independent, licensed plumbing companies.</p>
-      </footer>
-    </main>
+    </div>
   </div>
 </body>
 </html>
